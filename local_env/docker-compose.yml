@@ -1,0 +1,13 @@
+
+services:
+  postgres:
+    container_name: hse_analyze
+    image: postgres
+    environment:
+      POSTGRES_PASSWORD: 123456
+      POSTGRES_USER: hse_medical
+      POSTGRES_DB: hse_medical
+    volumes:
+      - ./sql:/docker-entrypoint-initdb.d
+    ports:
+      - 5450:5432
